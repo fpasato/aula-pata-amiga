@@ -1,14 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Clarity+City:ital,wght@0,100..900;1,100..900&family=Cousine:ital,wght@0,400;0,700;1,400;1,700&family=Fjalla+One&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Space+Grotesk:wght@300..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
+    --font: 'Chivo', sans-serif;
 
---font-family: 'Clarity City', sans-serif;
+    --bg: #F2F2F2;
+    --bg-dark: #40200E;
+    --surface: #FFFFFF;
 
---accent: #E4AE88ff;
---coffee-bean: #1D150Cff;
---surface: #FEFEFEff;
---bg: #F4F2F0ff;
---grey: #7E7370ff;
+    --primary: #D98452;
+    --primary-light: #F2AB6D;
+    --secondary: #F2BC8D;
+
+    --text: #40200E;
+    --text-light: #F2F2F2;
+    --text-muted: #765746;
+    --text-dark: #40200E;
+
+    --border: #D9C8BC;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font);
+    background-color: var(--bg);
+    color: var(--text);
+}

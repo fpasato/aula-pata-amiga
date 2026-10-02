@@ -1,0 +1,447 @@
+.contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: clamp(3rem, 5vw, 6rem);
+    min-height: 100vh;
+    padding: clamp(3rem, 5vw, 5rem) clamp(5%, 8vw, 8%);
+    background: #e4d8cc;
+    color: var(--text);
+    font-family: var(--font);
+}
+
+/* LEFT */
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: clamp(1rem, 1.5vw, 1.25rem);
+    min-width: 0;
+}
+
+.content h2 {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    margin: 0;
+    color: var(--primary);
+    font-size: clamp(.9rem, 1.3vw, 1.2rem);
+    font-weight: 600;
+    letter-spacing: .2em;
+}
+
+.content h2::before {
+    content: '';
+    width: clamp(1.25rem, 2vw, 2rem);
+    height: 2px;
+    background: currentColor;
+}
+
+.subtitle {
+    margin-top: .5rem;
+    color: var(--text-muted);
+    font-size: clamp(.9rem, 1.1vw, 1rem);
+}
+
+.content p {
+    max-width: 650px;
+    margin: 0;
+    color: var(--text);
+    font-size: clamp(1.75rem, 4vw, 4.2rem);
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -.04em;
+}
+
+.content em {
+    color: var(--primary);
+    font-style: normal;
+}
+
+.actions {
+    display: flex;
+    gap: clamp(.75rem, 1vw, 1rem);
+    margin-top: clamp(1rem, 1.5vw, 1.5rem);
+    flex-wrap: wrap;
+}
+
+.primary,
+.secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: .75rem;
+    padding: clamp(.75rem, 1vw, .9rem) clamp(1.1rem, 1.5vw, 1.4rem);
+    border: 1px solid transparent;
+    text-decoration: none;
+    font-size: clamp(.85rem, 1vw, .9rem);
+    transition: .3s;
+}
+
+.primary {
+    color: var(--text-light);
+    background: var(--text);
+}
+
+.primary:hover {
+    background: var(--primary);
+}
+
+.primary span {
+    transition: transform .3s;
+}
+
+.primary:hover span {
+    transform: translateX(4px);
+}
+
+.secondary {
+    color: var(--text);
+    border-color: color-mix(in srgb, var(--text) 25%, transparent);
+}
+
+.secondary:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+/* HORÁRIOS */
+
+.hours {
+    display: flex;
+    gap: clamp(1.5rem, 3vw, 3rem);
+    margin: clamp(1.25rem, 2vw, 2rem) 0 0;
+    padding: clamp(1rem, 1.5vw, 1.5rem) 0 0;
+    list-style: none;
+    border-top: 1px solid color-mix(in srgb, var(--text) 20%, transparent);
+    flex-wrap: wrap;
+}
+
+.hours li {
+    display: flex;
+    flex-direction: column;
+    gap: .35rem;
+}
+
+.hours span {
+    color: var(--primary);
+    font-size: clamp(.7rem, .9vw, .75rem);
+    text-transform: uppercase;
+    letter-spacing: .1em;
+}
+
+.hours strong {
+    color: var(--text);
+    font-size: clamp(.9rem, 1.1vw, 1rem);
+    font-weight: 500;
+}
+
+/* RIGHT */
+
+.side {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.5rem, 2vw, 2rem);
+    min-width: 0;
+}
+
+.mapContainer {
+    position: relative;
+    height: clamp(280px, 32vw, 430px);
+    overflow: hidden;
+    border: 1px solid color-mix(in srgb, var(--text) 15%, transparent);
+    border-radius: 1.25rem;
+    box-shadow: 0 20px 40px color-mix(in srgb, var(--text) 15%, transparent);
+}
+
+.mapContainer iframe {
+    filter: saturate(.75) contrast(1.05);
+}
+
+.badge {
+    position: absolute;
+    bottom: 1.25rem;
+    left: 1.25rem;
+    padding: clamp(.5rem, .8vw, .6rem) clamp(.75rem, 1vw, .9rem);
+    color: var(--text-light);
+    background: var(--text);
+    font-size: clamp(.7rem, .9vw, .75rem);
+}
+
+/* CONTATOS */
+
+.list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(1rem, 1.5vw, 1.5rem) clamp(1.5rem, 2vw, 2rem);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.card {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: clamp(.75rem, 1vw, 1rem);
+    padding-top: clamp(.75rem, 1vw, 1rem);
+    color: var(--text);
+    text-decoration: none;
+    border-top: 1px solid color-mix(in srgb, var(--text) 20%, transparent);
+    transition: .3s;
+}
+
+.card:hover {
+    border-color: var(--primary);
+}
+
+.card div {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+    min-width: 0;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(28px, 2.5vw, 34px);
+    height: clamp(28px, 2.5vw, 34px);
+    font-size: clamp(.85rem, 1.1vw, 1rem);
+    color: var(--primary);
+    background: color-mix(in srgb, var(--primary) 12%, transparent);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.arrow {
+    color: var(--text-muted);
+    font-size: clamp(.85rem, 1vw, .95rem);
+    transition: transform .3s, color .3s;
+    flex-shrink: 0;
+}
+
+.card:hover .arrow {
+    color: var(--primary);
+    transform: translate(2px, -2px);
+}
+
+.label {
+    color: var(--primary);
+    font-size: clamp(.65rem, .85vw, .7rem);
+    text-transform: uppercase;
+    letter-spacing: .1em;
+}
+
+.card strong {
+    color: var(--text);
+    font-size: clamp(.85rem, 1.1vw, .95rem);
+    font-weight: 500;
+    word-break: break-word;
+}
+
+/* ANIMAÇÕES */
+
+.content,
+.side {
+    animation-timeline: view();
+    animation-range: entry 35% exit 85%;
+    animation-fill-mode: both;
+}
+
+.content {
+    animation-name: scrollInLeft;
+}
+
+.side {
+    animation-name: scrollInRight;
+}
+
+@keyframes scrollInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+
+    20%,
+    80% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+}
+
+@keyframes scrollInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+
+    20%,
+    80% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+}
+
+/* ====== LAYOUT ====== */
+
+/* 1500px – 1101px */
+@media (min-width: 1101px) and (max-width: 1500px) {
+    .contact {
+        gap: clamp(3rem, 4vw, 5rem);
+    }
+
+    .mapContainer {
+        height: clamp(340px, 30vw, 420px);
+    }
+}
+
+/* 1100px – 901px */
+@media (min-width: 901px) and (max-width: 1100px) {
+    .contact {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+
+    .content p {
+        font-size: clamp(1.75rem, 3.8vw, 2.8rem);
+    }
+
+    .mapContainer {
+        height: clamp(300px, 32vw, 380px);
+    }
+
+    .list {
+        gap: 1rem 1.25rem;
+    }
+}
+
+/* Empilha */
+@media (max-width: 900px) {
+    .contact {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding: 4rem 6%;
+        min-height: auto;
+    }
+
+    .content p {
+        font-size: clamp(1.75rem, 5.5vw, 2.8rem);
+        max-width: 100%;
+    }
+
+    .mapContainer {
+        height: clamp(280px, 45vw, 350px);
+    }
+}
+
+@media (max-width: 600px) {
+    .contact {
+        padding: 3.5rem 6%;
+        gap: 2.5rem;
+    }
+
+    .content p {
+        font-size: clamp(1.5rem, 7vw, 2.3rem);
+    }
+
+    .actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .primary,
+    .secondary {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .hours {
+        gap: 1.5rem;
+    }
+
+    .list {
+        grid-template-columns: 1fr;
+    }
+
+    .mapContainer {
+        height: clamp(240px, 55vw, 300px);
+    }
+
+    .badge {
+        bottom: 1rem;
+        left: 1rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .contact {
+        padding: 3rem 5%;
+        gap: 2rem;
+    }
+
+    .content p {
+        font-size: clamp(1.35rem, 7.5vw, 1.8rem);
+    }
+
+    .subtitle {
+        font-size: .85rem;
+    }
+
+    .hours {
+        gap: 1rem;
+    }
+
+    .mapContainer {
+        height: clamp(220px, 60vw, 260px);
+        border-radius: 1rem;
+    }
+
+    .badge {
+        bottom: .75rem;
+        left: .75rem;
+        padding: .4rem .65rem;
+        font-size: .68rem;
+    }
+
+    .card {
+        gap: .6rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .contact {
+        padding: 2.5rem 4%;
+        gap: 1.75rem;
+    }
+
+    .content p {
+        font-size: 1.25rem;
+    }
+
+    .mapContainer {
+        height: 200px;
+    }
+
+    .icon {
+        width: 26px;
+        height: 26px;
+        font-size: .8rem;
+    }
+
+    .card strong {
+        font-size: .82rem;
+    }
+}

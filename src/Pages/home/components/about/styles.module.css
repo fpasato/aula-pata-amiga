@@ -1,0 +1,253 @@
+.about {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    padding: 5rem 8%;
+    background: var(--primary);
+    color: var(--text-light);
+    min-height: 800px;
+}
+
+.carousel {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    min-width: 0;
+    border-radius: 1rem;
+}
+
+.carousel img {
+    width: 100%;
+    height: clamp(150px, 28vw, 400px);
+    border-radius: 1.8rem;
+    object-fit: contain;
+}
+
+.carousel button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(28px, 3vw, 40px);
+    height: clamp(28px, 3vw, 40px);
+    flex-shrink: 0;
+    background: transparent;
+    color: var(--text-light);
+    padding: .5rem;
+    border: 0;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.carousel button:hover {
+    border-radius: 50%;
+    background: var(--primary-light);
+    color: var(--text);
+    opacity: .7;
+    transform: scale(1.1);
+}
+
+.carousel button svg {
+    width: 100%;
+    height: 100%;
+}
+
+.next {
+    animation: slideNext .4s ease;
+}
+
+.prev {
+    animation: slidePrev .4s ease;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(.75rem, 1.2vw, 1rem);
+    max-width: 550px;
+    min-width: 0;
+}
+
+.content h2,
+.content h3,
+.content p {
+    margin: 0;
+}
+
+.content h2 {
+    color: var(--secondary);
+    font-size: clamp(.85rem, 1.3vw, 1.2rem);
+    text-transform: uppercase;
+    letter-spacing: .08em;
+}
+
+.content h3 {
+    font-size: clamp(1.2rem, 3.5vw, 3rem);
+    line-height: 1.15;
+}
+
+.content p {
+    font-size: clamp(.85rem, 1.4vw, 1.15rem);
+    line-height: 1.7;
+    opacity: .9;
+}
+
+.content ul {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(.6rem, 1vw, .9rem);
+    margin: .8rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.content li {
+    display: flex;
+    align-items: center;
+    gap: clamp(.5rem, .9vw, .8rem);
+    font-size: clamp(.8rem, 1.3vw, 1.05rem);
+    line-height: 1.4;
+}
+
+.content li::before {
+    content: "✓";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: clamp(18px, 1.8vw, 24px);
+    height: clamp(18px, 1.8vw, 24px);
+    border-radius: 50%;
+    background: var(--secondary);
+    color: var(--primary);
+    font-size: clamp(.6rem, .9vw, .75rem);
+    font-weight: bold;
+}
+
+@keyframes slideNext {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+}
+
+@keyframes slidePrev {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+}
+
+
+@media (min-width: 1101px) and (max-width: 1500px) {
+    .about {
+        gap: 3.5rem;
+        padding: 4.5rem 7%;
+        min-height: auto;
+    }
+}
+
+@media (min-width: 901px) and (max-width: 1100px) {
+    .about {
+        gap: 2.5rem;
+        padding: 4rem 6%;
+        min-height: auto;
+    }
+}
+
+@media (max-width: 900px) {
+    .about {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2.5rem;
+        padding: 4rem 6%;
+        min-height: auto;
+    }
+
+    .carousel {
+        width: 100%;
+    }
+
+    .content {
+        max-width: 100%;
+    }
+
+    .carousel img {
+        height: clamp(180px, 45vw, 340px);
+    }
+
+    .content h3 {
+        font-size: clamp(1.4rem, 5vw, 2.2rem);
+    }
+
+    .content p {
+        font-size: clamp(.9rem, 2.2vw, 1.05rem);
+    }
+
+    .content h2 {
+        font-size: clamp(.85rem, 2vw, 1.05rem);
+    }
+
+    .content li {
+        font-size: clamp(.85rem, 2vw, .95rem);
+    }
+}
+
+@media (max-width: 600px) {
+    .about {
+        padding: 3rem 6%;
+        gap: 1.75rem;
+    }
+
+    .carousel {
+        gap: .5rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .about {
+        padding: 2.5rem 5%;
+        gap: 1.5rem;
+    }
+
+    .carousel {
+        gap: .25rem;
+    }
+
+    .carousel img {
+        border-radius: .75rem;
+        height: clamp(140px, 50vw, 200px);
+    }
+
+    .content h3 {
+        font-size: clamp(1.15rem, 6vw, 1.5rem);
+    }
+
+    .content p {
+        font-size: clamp(.8rem, 3.4vw, .9rem);
+        line-height: 1.6;
+    }
+
+    .content li {
+        font-size: clamp(.75rem, 3.2vw, .85rem);
+    }
+}
+
+@media (max-width: 320px) {
+    .about {
+        padding: 2rem 4%;
+        gap: 1.25rem;
+    }
+
+    .carousel img {
+        height: 140px;
+    }
+
+    .content h3 {
+        font-size: 1.1rem;
+    }
+
+    .content p {
+        font-size: .8rem;
+    }
+}
